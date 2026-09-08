@@ -142,8 +142,8 @@
        FULL-SCREEN CONTAINER ARCHITECTURE
        ========================================================================== */
     .container {
-      width: 92%;
-      max-width: 1480px;
+      width: 90%;
+      max-width: 1400px;
       margin: 0 auto;
       position: relative;
       z-index: 2;
@@ -168,7 +168,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
+      height: 76px;
     }
 
     .brand {
@@ -246,7 +246,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 32px;
       list-style: none;
     }
 
@@ -367,7 +367,7 @@
     .ticker-bar {
       background: rgba(14, 18, 25, 0.6);
       border-bottom: 1px solid var(--border-subtle);
-      padding: 8px 0;
+      padding: 10px 0;
       overflow: hidden;
       font-family: var(--font-mono);
       font-size: 0.72rem;
@@ -375,7 +375,7 @@
     }
     .ticker-content {
       display: flex;
-      gap: 36px;
+      gap: 48px;
       white-space: nowrap;
       animation: tickerMarquee 45s linear infinite;
     }
@@ -397,14 +397,14 @@
        HERO COMMAND CENTER (SPLIT FULL-SCREEN GRID)
        ========================================================================== */
     .hero-section {
-      padding: 70px 0 90px;
+      padding: 100px 0 110px;
       position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: 50px;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 72px;
       align-items: center;
     }
 
@@ -412,7 +412,7 @@
     .hero-intel {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 30px;
     }
 
     .hero-badge-row {
@@ -455,7 +455,7 @@
     .hero-title {
       font-size: clamp(2.3rem, 4.2vw, 3.8rem);
       font-weight: 800;
-      line-height: 1.12;
+      line-height: 1.18;
       letter-spacing: -0.03em;
       color: #fff;
     }
@@ -469,7 +469,7 @@
     .hero-subtitle {
       font-size: 1.15rem;
       color: var(--text-muted);
-      line-height: 1.7;
+      line-height: 1.75;
       max-width: 620px;
     }
 
@@ -482,9 +482,9 @@
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin: 10px 0 10px;
-      padding: 18px 22px;
+      gap: 24px;
+      margin: 6px 0 6px;
+      padding: 26px 28px;
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
@@ -494,7 +494,7 @@
     .stat-item {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
     }
     .stat-val {
       font-family: var(--font-mono);
@@ -518,7 +518,7 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 16px;
     }
 
     /* Right Hero Column: Interactive Terminal */
@@ -589,7 +589,7 @@
 
     .terminal-body {
       flex: 1;
-      padding: 20px;
+      padding: 22px;
       font-family: var(--font-mono);
       font-size: 0.84rem;
       color: var(--text-main);
@@ -608,8 +608,8 @@
     }
 
     .term-line {
-      margin-bottom: 8px;
-      line-height: 1.5;
+      margin-bottom: 12px;
+      line-height: 1.6;
       word-break: break-word;
     }
     .term-prompt {
@@ -623,6 +623,7 @@
     .term-output {
       color: var(--text-muted);
       margin-left: 2px;
+      margin-top: 4px;
       white-space: pre-wrap;
     }
     .term-output.highlight {
@@ -637,7 +638,7 @@
     .term-output.ascii {
       color: var(--cyan);
       font-size: 0.72rem;
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
     .terminal-input-row {
@@ -664,12 +665,12 @@
 
     /* Terminal Quick Chips */
     .terminal-chips {
-      padding: 10px 16px;
+      padding: 12px 18px;
       background: #090c12;
       border-top: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       flex-wrap: wrap;
     }
     .chip-label {
@@ -685,7 +686,7 @@
       color: var(--cyan);
       border: 1px solid rgba(0, 229, 255, 0.2);
       border-radius: 4px;
-      padding: 3px 8px;
+      padding: 4px 10px;
       cursor: pointer;
       transition: all var(--transition-fast);
     }
@@ -699,13 +700,13 @@
        SECTION HEADERS & LAYOUT
        ========================================================================== */
     section {
-      padding: 90px 0;
+      padding: 120px 0;
       position: relative;
       border-top: 1px solid var(--border-subtle);
     }
 
     .section-header {
-      margin-bottom: 48px;
+      margin-bottom: 64px;
     }
     .section-eyebrow {
       font-family: var(--font-mono);
@@ -713,7 +714,7 @@
       color: var(--cyan);
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -733,7 +734,8 @@
       color: var(--text-muted);
       font-size: 1.05rem;
       max-width: 680px;
-      margin-top: 10px;
+      margin-top: 14px;
+      line-height: 1.7;
     }
 
     /* ==========================================================================
@@ -744,7 +746,7 @@
       border: 1px solid var(--border-subtle);
       border-left: 4px solid var(--cyan);
       border-radius: var(--radius-md);
-      padding: 36px 40px;
+      padding: 44px 48px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       transition: all var(--transition-normal);
       position: relative;
@@ -763,7 +765,7 @@
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
     }
 
     .exp-role-group h3 {
@@ -778,7 +780,7 @@
       font-family: var(--font-mono);
       font-size: 0.92rem;
       color: var(--cyan);
-      margin-top: 4px;
+      margin-top: 8px;
     }
 
     .exp-meta {
@@ -792,20 +794,20 @@
     }
     .exp-loc {
       color: var(--text-dim);
-      margin-top: 2px;
+      margin-top: 4px;
     }
 
     .exp-scope-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin: 16px 0 24px;
+      gap: 10px;
+      margin: 20px 0 32px;
     }
 
     .exp-details-grid {
       display: grid;
       grid-template-columns: 1.4fr 1fr;
-      gap: 36px;
+      gap: 48px;
       align-items: start;
     }
 
@@ -813,15 +815,15 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 22px;
     }
 
     .exp-responsibilities li {
       position: relative;
-      padding-left: 26px;
+      padding-left: 28px;
       color: var(--text-muted);
       font-size: 0.96rem;
-      line-height: 1.65;
+      line-height: 1.75;
     }
     .exp-responsibilities li::before {
       content: '▹';
@@ -841,7 +843,7 @@
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 22px;
+      padding: 28px;
     }
     .method-title {
       font-family: var(--font-mono);
@@ -849,7 +851,7 @@
       color: var(--text-dim);
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -857,13 +859,13 @@
     .method-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
     }
     .method-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 12px;
+      padding: 12px 14px;
       background: rgba(0,0,0,0.25);
       border-radius: 4px;
       border-left: 2px solid;
@@ -883,21 +885,21 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 30px;
+      gap: 20px;
+      margin-bottom: 40px;
     }
 
     .filter-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
     }
 
     .filter-btn {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      padding: 8px 16px;
+      padding: 9px 18px;
       border-radius: var(--radius-sm);
       font-family: var(--font-mono);
       font-size: 0.8rem;
@@ -924,7 +926,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 8px 14px 8px 36px;
+      padding: 10px 16px 10px 38px;
       font-family: var(--font-mono);
       font-size: 0.8rem;
       color: #fff;
@@ -947,15 +949,15 @@
 
     .matrix-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
     }
 
     .matrix-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 24px;
+      padding: 32px;
       display: flex;
       flex-direction: column;
       transition: all var(--transition-normal);
@@ -973,18 +975,19 @@
     .matrix-card-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 22px;
     }
     .matrix-icon-box {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.1rem;
       border: 1px solid;
+      flex-shrink: 0;
     }
     .c-red .matrix-icon-box { background: rgba(255, 51, 75, 0.1); border-color: rgba(255, 51, 75, 0.3); color: var(--red); }
     .c-amber .matrix-icon-box { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: var(--amber); }
@@ -1000,19 +1003,26 @@
       font-family: var(--font-mono);
       font-size: 0.7rem;
       color: var(--text-dim);
+      margin-top: 3px;
+      display: block;
+    }
+
+    .matrix-card > p {
+      margin-bottom: 6px;
+      line-height: 1.65;
     }
 
     .matrix-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
+      gap: 10px;
+      margin-top: 14px;
     }
     .tool-pill {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 5px 10px;
+      padding: 6px 12px;
       font-family: var(--font-mono);
       font-size: 0.76rem;
       color: var(--text-muted);
@@ -1037,8 +1047,8 @@
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--text-dim);
-      margin-top: 20px;
-      margin-bottom: 8px;
+      margin-top: 28px;
+      margin-bottom: 10px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -1049,14 +1059,14 @@
     .certs-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 32px;
     }
 
     .cert-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 30px;
+      padding: 36px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1084,7 +1094,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 20px;
+      margin-bottom: 26px;
     }
     .cert-badge-icon {
       width: 48px;
@@ -1121,30 +1131,31 @@
       font-size: 1.05rem;
       font-weight: 600;
       color: var(--text-main);
-      margin-top: 4px;
-      line-height: 1.4;
+      margin-top: 8px;
+      line-height: 1.5;
     }
     .cert-issuer {
       font-family: var(--font-mono);
       font-size: 0.8rem;
       color: var(--cyan);
-      margin-top: 6px;
+      margin-top: 10px;
     }
 
     .cert-skills-list {
-      margin-top: 22px;
-      padding-top: 18px;
+      margin-top: 28px;
+      padding-top: 22px;
       border-top: 1px solid var(--border-subtle);
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
     }
     .cert-skill-item {
       font-size: 0.84rem;
       color: var(--text-muted);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      line-height: 1.5;
     }
     .cert-skill-item svg {
       color: var(--cyan);
@@ -1157,14 +1168,14 @@
     .poc-container {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
-      gap: 30px;
+      gap: 32px;
     }
 
     .poc-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 34px;
+      padding: 40px;
       position: relative;
       transition: all var(--transition-normal);
     }
@@ -1178,7 +1189,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .poc-tag-main {
       font-family: var(--font-mono);
@@ -1196,28 +1207,29 @@
       font-size: 1.35rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .poc-card p {
       color: var(--text-muted);
       font-size: 0.96rem;
-      line-height: 1.65;
-      margin-bottom: 20px;
+      line-height: 1.75;
+      margin-bottom: 28px;
     }
 
     .poc-points {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
+      gap: 16px;
+      margin-bottom: 30px;
     }
     .poc-points li {
       font-size: 0.9rem;
       color: var(--text-muted);
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 12px;
+      line-height: 1.6;
     }
     .poc-points li span.icon {
       color: var(--amber);
@@ -1229,7 +1241,7 @@
       background: linear-gradient(145deg, var(--bg-surface) 0%, #0e1724 100%);
       border: 1px solid rgba(0, 229, 255, 0.2);
       border-radius: var(--radius-md);
-      padding: 34px;
+      padding: 40px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1251,7 +1263,7 @@
     .portal-repo-info {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
     .portal-repo-name {
       font-family: var(--font-mono);
@@ -1273,8 +1285,8 @@
 
     .portal-stats-row {
       display: flex;
-      gap: 18px;
-      margin-top: 14px;
+      gap: 22px;
+      margin-top: 18px;
     }
     .portal-stat-pill {
       font-family: var(--font-mono);
@@ -1291,7 +1303,7 @@
     .education-timeline {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 28px;
       position: relative;
     }
 
@@ -1299,7 +1311,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 28px;
+      padding: 32px;
       position: relative;
       transition: all var(--transition-normal);
       display: flex;
@@ -1321,7 +1333,7 @@
       border: 1px solid rgba(139, 92, 246, 0.3);
       color: #c4b5fd;
       display: inline-block;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
       width: fit-content;
     }
 
@@ -1329,16 +1341,17 @@
       font-size: 1.2rem;
       font-weight: 700;
       color: #fff;
+      line-height: 1.4;
     }
     .edu-school {
       font-size: 0.92rem;
       color: var(--text-muted);
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     .edu-score-box {
-      margin-top: 20px;
-      padding-top: 16px;
+      margin-top: 26px;
+      padding-top: 20px;
       border-top: 1px solid var(--border-subtle);
       display: flex;
       align-items: baseline;
@@ -1363,7 +1376,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 50px;
+      padding: 60px;
       position: relative;
       overflow: hidden;
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
@@ -1380,8 +1393,8 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 48px;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
       align-items: center;
     }
 
@@ -1394,21 +1407,21 @@
     .contact-left p {
       color: var(--text-muted);
       font-size: 1.05rem;
-      margin-top: 12px;
-      line-height: 1.7;
+      margin-top: 18px;
+      line-height: 1.75;
     }
 
     .contact-channels {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
     }
 
     .contact-item-btn {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 20px;
+      padding: 18px 22px;
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
@@ -1427,7 +1440,7 @@
     .contact-channel-info {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
     .contact-icon {
       color: var(--cyan);
@@ -1437,6 +1450,7 @@
     .contact-channel-details {
       display: flex;
       flex-direction: column;
+      gap: 3px;
     }
     .contact-channel-title {
       font-family: var(--font-mono);
@@ -1493,7 +1507,7 @@
        ========================================================================== */
     footer {
       border-top: 1px solid var(--border-subtle);
-      padding: 40px 0;
+      padding: 48px 0;
       font-family: var(--font-mono);
       font-size: 0.8rem;
       color: var(--text-dim);
@@ -1557,7 +1571,7 @@
     @media (max-width: 1200px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 48px;
       }
       .matrix-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1571,6 +1585,9 @@
     }
 
     @media (max-width: 900px) {
+      section {
+        padding: 90px 0;
+      }
       .nav-links, .nav-actions {
         display: none;
       }
@@ -1592,7 +1609,7 @@
       }
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 40px;
       }
       .hero-stats {
         grid-template-columns: repeat(2, 1fr);
@@ -1601,7 +1618,16 @@
 
     @media (max-width: 640px) {
       .container {
-        width: 90%;
+        width: 88%;
+      }
+      section {
+        padding: 72px 0;
+      }
+      .section-header {
+        margin-bottom: 44px;
+      }
+      .hero-section {
+        padding: 64px 0 80px;
       }
       .hero-title {
         font-size: 2.2rem;
@@ -1619,10 +1645,13 @@
         height: 440px;
       }
       .contact-card {
-        padding: 30px 20px;
+        padding: 34px 24px;
       }
       .experience-card {
-        padding: 24px;
+        padding: 28px 24px;
+      }
+      .exp-details-grid, .poc-container {
+        gap: 28px;
       }
     }
   </style>
@@ -2292,7 +2321,7 @@
                 </svg>
                 <a href="https://github.com/dhanushhsuvarna/CyberSec-Portal" target="_blank" rel="noopener">CyberSec-Portal</a>
               </div>
-              <p style="color:var(--text-muted); font-size:0.95rem; margin-top:8px;">
+              <p style="color:var(--text-muted); font-size:0.95rem; margin-top:8px; line-height:1.7;">
                 Centralized knowledge repository hosting penetration testing methodologies, cheat-sheets, privilege escalation payloads, and machine walkthroughs for aspiring researchers.
               </p>
             </div>
@@ -2309,7 +2338,7 @@
                 </div>
               </div>
 
-              <div style="margin-top: 24px;">
+              <div style="margin-top: 28px;">
                 <a href="https://github.com/dhanushhsuvarna/CyberSec-Portal" target="_blank" rel="noopener" class="btn-outline" style="width:100%; justify-content:center;">
                   Explore CyberSec-Portal ↗
                 </a>
@@ -2338,7 +2367,7 @@
               <span class="edu-level-badge">GRADUATION DEGREE</span>
               <h3 class="edu-degree">B.Sc. Computer Science</h3>
               <div class="edu-school">PVG's College of Science, Pune</div>
-              <p style="color:var(--text-muted); font-size:0.86rem; margin-top:12px;">
+              <p style="color:var(--text-muted); font-size:0.86rem; margin-top:16px; line-height:1.7;">
                 Foundational studies in computer architectures, operating systems, computer networking, algorithms, and secure software development.
               </p>
             </div>
@@ -2355,7 +2384,7 @@
               <span class="edu-level-badge">HIGHER SECONDARY (HSC)</span>
               <h3 class="edu-degree">Higher Secondary Certificate</h3>
               <div class="edu-school">Vishwakarma College, Pune</div>
-              <p style="color:var(--text-muted); font-size:0.86rem; margin-top:12px;">
+              <p style="color:var(--text-muted); font-size:0.86rem; margin-top:16px; line-height:1.7;">
                 Focus on Science, Mathematics, and Computer Science fundamentals preparing for higher technical studies.
               </p>
             </div>
@@ -2372,7 +2401,7 @@
               <span class="edu-level-badge">SECONDARY SCHOOL (SSC)</span>
               <h3 class="edu-degree">Secondary School Certificate</h3>
               <div class="edu-school">Abhinav English Medium School, Pune</div>
-              <p style="color:var(--text-muted); font-size:0.86rem; margin-top:12px;">
+              <p style="color:var(--text-muted); font-size:0.86rem; margin-top:16px; line-height:1.7;">
                 Graduated with Distinction, demonstrating consistent academic rigor and problem-solving excellence.
               </p>
             </div>
@@ -2400,7 +2429,7 @@
                 Whether you need a thorough web/mobile vulnerability assessment, Active Directory defense evaluation, or are scouting for a driven penetration tester / red team analyst, my inbox is open.
               </p>
 
-              <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+              <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
                 <span class="tactical-tag tag-green">● AVAILABLE FOR IMMEDIATE ENGAGEMENTS</span>
                 <span class="tactical-tag tag-cyan">GLOBAL REMOTE / PUNE ON-SITE</span>
               </div>

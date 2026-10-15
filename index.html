@@ -117,6 +117,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:960px){.hg,.g2{grid-template-columns:1fr}.g3{grid-template-columns:repeat(2,1fr)}.hero{padding:56px 0 72px}section{padding:72px 0}}
 @media(max-width:640px){.g3{grid-template-columns:1fr}.card{padding:24px}.cta{padding:28px 22px}.dt{text-align:left}.term{height:440px}nav{gap:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.shatter{position:absolute;z-index:200;pointer-events:none}
+.shatter>*{will-change:transform,opacity}
 </style>
 </head>
 <body>
@@ -319,6 +321,78 @@ run('whoami');run('help');
 var links=[].slice.call(document.querySelectorAll('nav a'));
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
 document.querySelectorAll('main section[id]').forEach(function(s){io.observe(s)});
+/* Glass-break effect: a clicked box cracks, shatters, then re-forms */
+(function(){
+var SEL='.btn,.chip,.ch,.pill,.tag,.badge,.card',NS='http://www.w3.org/2000/svg';
+function rnd(a,b){return a+Math.random()*(b-a)}
+function shatter(el,cx,cy){
+  var r=el.getBoundingClientRect(),w=r.width,h=r.height;
+  if(w<24||h<16)return;
+  var ix=cx-r.left,iy=cy-r.top;
+  var cols=Math.max(2,Math.min(6,Math.round(w/80))),rows=Math.max(2,Math.min(4,Math.round(h/70)));
+  var P=[],T=[],i,j;
+  for(j=0;j<=rows;j++){P[j]=[];for(i=0;i<=cols;i++){
+    var px=i*w/cols,py=j*h/rows;
+    if(i>0&&i<cols)px+=rnd(-.3,.3)*w/cols;
+    if(j>0&&j<rows)py+=rnd(-.3,.3)*h/rows;
+    P[j][i]=[px,py];}}
+  for(j=0;j<rows;j++)for(i=0;i<cols;i++){
+    var a=P[j][i],b=P[j][i+1],c=P[j+1][i+1],d=P[j+1][i];
+    if(Math.random()<.5)T.push([a,b,c],[a,c,d]);else T.push([a,b,d],[b,c,d]);
+  }
+  var box=document.createElement('div');box.className='shatter';box.setAttribute('aria-hidden','true');
+  box.style.left=(r.left+window.scrollX)+'px';box.style.top=(r.top+window.scrollY)+'px';
+  box.style.width=w+'px';box.style.height=h+'px';
+  var end=0;
+  T.forEach(function(t){
+    var s=el.cloneNode(true);
+    s.removeAttribute('id');
+    [].forEach.call(s.querySelectorAll('[id]'),function(n){n.removeAttribute('id')});
+    var gx=(t[0][0]+t[1][0]+t[2][0])/3,gy=(t[0][1]+t[1][1]+t[2][1])/3,m=s.style;
+    m.position='absolute';m.left='0';m.top='0';m.margin='0';m.width=w+'px';m.height=h+'px';m.transition='none';
+    m.clipPath='polygon('+t.map(function(q){return q[0].toFixed(1)+'px '+q[1].toFixed(1)+'px'}).join(',')+')';
+    m.transformOrigin=gx.toFixed(1)+'px '+gy.toFixed(1)+'px';
+    var vx=gx-ix,vy=gy-iy,dist=Math.sqrt(vx*vx+vy*vy)||1,k=1/(1+dist/160);
+    var tx=vx/dist*rnd(40,140)*(.5+k)+rnd(-30,30),ty=vy/dist*rnd(20,80)*(.5+k)+rnd(180,380),rot=rnd(-140,140);
+    var delay=130+dist*.35,dur=rnd(750,1150);
+    end=Math.max(end,delay+dur);
+    box.appendChild(s);
+    s.animate([
+      {transform:'none',opacity:1},
+      {transform:'translate('+tx*.3+'px,'+ty*.1+'px) rotate('+rot*.3+'deg)',opacity:1,offset:.25},
+      {transform:'translate('+tx+'px,'+ty+'px) rotate('+rot+'deg)',opacity:0}
+    ],{duration:dur,delay:delay,easing:'ease-in',fill:'both'});
+  });
+  var svg=document.createElementNS(NS,'svg'),L=Math.max(w,h);
+  svg.setAttribute('width',w);svg.setAttribute('height',h);
+  svg.style.cssText='position:absolute;left:0;top:0;filter:drop-shadow(0 0 3px #00E5FF)';
+  for(i=0;i<8;i++){
+    var an=i/8*6.283+rnd(-.3,.3),co=Math.cos(an),si=Math.sin(an);
+    var path=document.createElementNS(NS,'path');
+    path.setAttribute('d','M'+ix+' '+iy+'L'+(ix+co*L*.25+rnd(-8,8))+' '+(iy+si*L*.25+rnd(-8,8))+'L'+(ix+co*L)+' '+(iy+si*L));
+    path.setAttribute('pathLength','1');path.setAttribute('fill','none');path.setAttribute('stroke','#fff');
+    path.setAttribute('stroke-width','1.2');path.setAttribute('stroke-dasharray','1');
+    svg.appendChild(path);
+    path.animate([{strokeDashoffset:1},{strokeDashoffset:0}],{duration:140,easing:'ease-out',fill:'both'});
+  }
+  svg.animate([{opacity:1},{opacity:1,offset:.4},{opacity:0}],{duration:380,fill:'both'});
+  box.appendChild(svg);
+  el._b=1;el.style.visibility='hidden';
+  document.body.appendChild(box);
+  setTimeout(function(){
+    box.remove();el.style.visibility='';el._b=0;
+    el.animate([{opacity:0,transform:'scale(.96)'},{opacity:1,transform:'none'}],{duration:320,easing:'ease-out'});
+  },end+40);
+}
+document.addEventListener('click',function(e){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  if(e.target.closest('input,textarea')||String(getSelection()))return;
+  var el=e.target.closest(SEL);
+  if(!el||el._b)return;
+  var r=el.getBoundingClientRect();
+  shatter(el,e.detail?e.clientX:r.left+r.width/2,e.detail?e.clientY:r.top+r.height/2);
+});
+})();
 </script>
 </body>
 </html>

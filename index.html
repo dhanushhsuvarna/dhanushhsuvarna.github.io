@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhanush Suvarna | Web Application Penetration Tester &amp; VAPT Analyst</title>
+<meta name="description" content="Dhanush Suvarna is a VAPT analyst in Pune focused on web application penetration testing and vulnerability assessment. eJPT and CRTA certified.">
+<meta property="og:title" content="Dhanush Suvarna | VAPT Analyst">
+<meta property="og:description" content="Web, mobile and network penetration testing. eJPT and CRTA certified.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090D;--s1:#0E1219;--s2:#141A24;--line:rgba(255,255,255,.08);--tx:#F1F5F9;--mu:#94A3B8;--dim:#7C8CA3;--cy:#00E5FF;--gr:#10B981;--am:#F59E0B;--rd:#FF6B7E;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;--sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.02) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+a{color:inherit}
+::selection{background:var(--cy);color:#000}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+.wrap{width:90%;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+
+.top{position:sticky;top:0;z-index:50;background:rgba(7,9,13,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:10px 0;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:700 .95rem var(--mono)}
+.brand small{display:block;font:400 .68rem var(--mono);color:var(--dim);letter-spacing:.05em}
+.logo{width:36px;height:36px;display:grid;place-items:center;background:var(--s2);border:1px solid rgba(0,229,255,.3);border-radius:6px;color:var(--cy);box-shadow:0 0 15px rgba(0,229,255,.15)}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{font:.8rem var(--mono);color:var(--mu);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--cy);border-color:var(--cy)}
+
+.hero{padding:80px 0 90px}
+.hg{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tag{font:.72rem var(--mono);padding:4px 10px;border-radius:6px;border:1px solid;letter-spacing:.04em}
+.t-c{color:var(--cy);border-color:rgba(0,229,255,.3);background:rgba(0,229,255,.08)}
+.t-g{color:var(--gr);border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.08)}
+.t-a{color:var(--am);border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.08)}
+.t-r{color:var(--rd);border-color:rgba(255,51,75,.3);background:rgba(255,51,75,.08)}
+h1{font-size:clamp(2.2rem,4.6vw,3.7rem);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:22px}
+.grad{background:linear-gradient(135deg,#00E5FF,#38bdf8 50%,#818cf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:1.1rem;color:var(--mu);max-width:56ch;margin-bottom:28px}
+.sub b{color:var(--tx);font-weight:600}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:6px;font:600 .85rem var(--sans);text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--tx);cursor:pointer;transition:.2s}
+.btn:hover{border-color:var(--cy);color:var(--cy)}
+.btn.p{background:var(--cy);border-color:var(--cy);color:#04121C;box-shadow:0 4px 18px rgba(0,229,255,.25)}
+.btn.p:hover{background:#6FF0FF;color:#04121C}
+
+.term{background:var(--s1);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.7),0 0 20px rgba(0,229,255,.05);overflow:hidden;display:flex;flex-direction:column;height:480px}
+.th{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#090c12;border-bottom:1px solid var(--line);font:.75rem var(--mono);color:var(--dim)}
+.dots{display:flex;gap:7px}.dots i{width:11px;height:11px;border-radius:50%}
+.tb{flex:1;overflow-y:auto;padding:18px;font:.82rem/1.6 var(--mono);background:rgba(10,13,19,.95)}
+.ln{margin-bottom:10px;word-break:break-word}
+.pr{color:var(--gr);font-weight:700}
+.out{white-space:pre-wrap;color:var(--mu);margin-top:3px}
+.out.ok{color:var(--cy)}.out.er{color:var(--rd)}
+.ti{display:flex;gap:8px;align-items:center;padding:8px 16px;background:#080b10;border-top:1px solid var(--line);font:.82rem var(--mono)}
+.ti:focus-within{outline:2px solid var(--cy);outline-offset:-2px}
+.ti span{color:var(--gr);font-weight:700;white-space:nowrap}
+.ti input{flex:1;min-width:0;background:none;border:0;outline:0;color:#fff;font:inherit;caret-color:var(--cy)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 16px;background:#090c12;border-top:1px solid var(--line);font:.68rem var(--mono);color:var(--dim)}
+.chip{font:.7rem var(--mono);background:var(--s2);color:var(--cy);border:1px solid rgba(0,229,255,.2);border-radius:4px;padding:4px 10px;cursor:pointer}
+.chip:hover{background:rgba(0,229,255,.15);border-color:var(--cy)}
+
+section{padding:96px 0;border-top:1px solid var(--line)}
+.eb{font:.78rem var(--mono);color:var(--cy);letter-spacing:.1em;margin-bottom:10px}
+.eb::before{content:"// ";color:var(--dim)}
+h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+.desc{color:var(--mu);max-width:62ch;margin-bottom:44px}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:10px;padding:32px;transition:border-color .2s}
+.card:hover{border-color:rgba(0,229,255,.3)}
+.card h3{font-size:1.15rem;font-weight:700}
+.sb{font:.7rem var(--mono);color:var(--dim);margin-top:3px;letter-spacing:.04em}
+.k{border-top:3px solid var(--k)}
+.r{--k:var(--rd)}.a{--k:var(--am)}.c{--k:var(--cy)}.g{--k:var(--gr)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{background:var(--s2);border:1px solid var(--line);border-radius:6px;padding:5px 11px;font:.76rem var(--mono);color:var(--mu)}
+.card p{color:var(--mu)}
+
+.exp{border-left:4px solid var(--cy);margin-bottom:24px}
+.exp.old{border-left-color:var(--dim)}
+.eh{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.eh h3{font-size:1.35rem;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.co{font:.9rem var(--mono);color:var(--cy);margin-top:6px}
+.dt{font:.8rem var(--mono);text-align:right;color:var(--mu)}
+.exp ul{list-style:none;display:grid;gap:12px;max-width:80ch}
+.exp li{position:relative;padding-left:26px;color:var(--mu)}
+.exp li::before{content:"▹";position:absolute;left:0;color:var(--cy)}
+
+.acr{font:800 1.7rem var(--mono);letter-spacing:-.02em;margin-bottom:6px}
+.iss{font:.82rem var(--mono);color:var(--cy);margin-top:10px}
+.badge{display:inline-block;font:.7rem var(--mono);padding:3px 10px;border-radius:4px;margin-bottom:16px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.3);color:#c4b5fd}
+.score{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font:.75rem var(--mono);color:var(--dim)}
+.score b{font-size:1.1rem;color:var(--cy)}
+.pts{list-style:none;display:grid;gap:12px;margin:18px 0 24px;color:var(--mu);font-size:.95rem}
+.pts li{display:flex;gap:12px}.pts li::before{content:"▶";color:var(--am);font:.8rem var(--mono);padding-top:3px}
+
+.chan{display:grid;gap:14px}
+.ch{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;padding:18px 22px;background:var(--s2);border:1px solid var(--line);border-radius:6px;text-decoration:none;color:var(--tx);font:inherit;text-align:left;cursor:pointer;transition:.2s}
+.ch:hover{border-color:var(--cy);background:#1A2230}
+.ch small{display:block;font:.7rem var(--mono);color:var(--dim);letter-spacing:.05em}
+.ch strong{font-size:.95rem;word-break:break-all}
+.ch em{font:normal .7rem var(--mono);color:var(--cy);background:rgba(0,229,255,.1);padding:4px 10px;border-radius:4px;white-space:nowrap}
+.cta{padding:48px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.cta .g2{align-items:center;gap:48px}
+.cta h3{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+#toast{position:fixed;right:24px;bottom:24px;z-index:100;background:#0f172a;border:1px solid var(--cy);padding:12px 20px;border-radius:6px;font:.85rem var(--mono);transform:translateY(90px);opacity:0;transition:.3s;pointer-events:none}
+#toast.show{transform:none;opacity:1}
+footer{border-top:1px solid var(--line);padding:40px 0;font:.8rem var(--mono);color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:960px){.hg,.g2{grid-template-columns:1fr}.g3{grid-template-columns:repeat(2,1fr)}.hero{padding:56px 0 72px}section{padding:72px 0}}
+@media(max-width:640px){.g3{grid-template-columns:1fr}.card{padding:24px}.cta{padding:28px 22px}.dt{text-align:left}.term{height:440px}nav{gap:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <span>dhanush_suvarna<small>VAPT ANALYST</small></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a><a href="#arsenal">Arsenal</a><a href="#creds">Certs</a><a href="#labs">Labs</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="border-top:0">
+  <div class="wrap hg">
+    <div>
+      <div class="tags"><span class="tag t-g">VAPT Analyst</span><span class="tag t-c">Web App Pentesting</span><span class="tag t-a">Android Security</span><span class="tag t-r">Active Directory</span></div>
+      <h1>Hunting Vulns.<br>Breaching Domains.<br><span class="grad">Hardening Systems.</span></h1>
+      <p class="sub">Hi, I'm <b>Dhanush Suvarna</b>, a security professional in Pune. I'm a VAPT Analyst at <b>Sungensis Software Solutions</b>, testing web applications, mobile apps and network infrastructure, and writing the reports that get findings fixed. <b>eJPT</b> and <b>CRTA</b> certified.</p>
+      <div class="btns">
+        <a class="btn p" href="#experience">See experience</a>
+        <a class="btn" href="https://github.com/dhanushhsuvarna" target="_blank" rel="noopener">GitHub</a>
+        <button class="btn" type="button" onclick="copyEmail()">Copy email</button>
+      </div>
+    </div>
+    <div class="term" role="region" aria-label="Interactive terminal">
+      <div class="th"><span class="dots" aria-hidden="true"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i></span>dhanush@recon: ~/profile</div>
+      <div class="tb" id="stream" aria-live="polite"></div>
+      <label class="ti"><span>dhanush@recon:~$</span><input id="cmd" type="text" placeholder="type help" autocomplete="off" spellcheck="false" aria-label="Terminal command"></label>
+      <div class="chips">RUN:
+        <button class="chip" type="button" data-c="whoami">whoami</button><button class="chip" type="button" data-c="skills">skills</button><button class="chip" type="button" data-c="certs">certs</button><button class="chip" type="button" data-c="exp">exp</button><button class="chip" type="button" data-c="contact">contact</button><button class="chip" type="button" data-c="clear">clear</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eb">01 · EXPERIENCE</div>
+    <h2>Findings on the job</h2>
+    <p class="desc">Vulnerability assessment and penetration testing across client-authorized applications, always within the agreed scope.</p>
+
+    <article class="card exp">
+      <div class="eh">
+        <div><h3>VAPT Analyst <span class="tag t-g">CURRENT</span></h3><div class="co">Sungensis Software Solutions Private Limited</div></div>
+        <div class="dt">Sep 2026 – Present<br>Pune, India</div>
+      </div>
+      <ul>
+        <li>Conduct VAPT of web applications, mobile applications and network infrastructure within authorized scope.</li>
+        <li>Discover vulnerabilities, validate them manually and analyse the technical cause.</li>
+        <li>Reproduce issues to assess exploitability and business or security impact.</li>
+        <li>Collect evidence and prepare VAPT reports covering findings, technical details, impact and remediation recommendations.</li>
+      </ul>
+    </article>
+
+    <article class="card exp old">
+      <div class="eh">
+        <div><h3>Cybersecurity R&amp;D Intern</h3><div class="co">Digiwork Online Services &amp; Consultancy LLP</div></div>
+        <div class="dt">Dec 2025 – Jul 2026<br>Pune, India</div>
+      </div>
+      <ul>
+        <li>Ran web application security assessments on client-authorized applications and environments.</li>
+        <li>Tested manually with Burp Suite, alongside OWASP ZAP and Nmap.</li>
+        <li>Covered authentication, authorization and access control, input validation, session management and other common web issues.</li>
+        <li>Validated findings and wrote reports with reproduction steps, evidence, severity, impact and remediation advice.</li>
+        <li>Assisted with vulnerability assessment and penetration-testing work across different application environments.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="arsenal">
+  <div class="wrap">
+    <div class="eb">02 · ARSENAL</div>
+    <h2>Tools I work with</h2>
+    <p class="desc">Grouped by the kind of target they're used against.</p>
+    <div class="g2">
+      <div class="card k r"><h3>Web &amp; Network</h3><div class="sb">APPLICATION AND INFRA TESTING</div>
+        <div class="pills"><span class="pill">Burp Suite Pro</span><span class="pill">Metasploit</span><span class="pill">Nmap</span><span class="pill">Nessus</span><span class="pill">OWASP ZAP</span><span class="pill">Postman</span></div></div>
+      <div class="card k a"><h3>Android Security</h3><div class="sb">STATIC AND DYNAMIC ANALYSIS</div>
+        <div class="pills"><span class="pill">MobSF</span><span class="pill">Frida</span><span class="pill">Yaazhini</span><span class="pill">Jadx GUI</span><span class="pill">Apktool</span></div></div>
+      <div class="card k c"><h3>Active Directory</h3><div class="sb">ENUMERATION, ATTACK PATHS, PIVOTING</div>
+        <div class="pills"><span class="pill">BloodHound</span><span class="pill">Responder</span><span class="pill">Kerbrute</span><span class="pill">CrackMapExec</span><span class="pill">Impacket</span><span class="pill">Mimikatz</span><span class="pill">Ligolo-ng</span><span class="pill">Chisel</span></div></div>
+      <div class="card k g"><h3>Systems &amp; Reporting</h3><div class="sb">ENVIRONMENTS AND DELIVERABLES</div>
+        <div class="pills"><span class="pill">Linux</span><span class="pill">Windows</span><span class="pill">Network security</span><span class="pill">Reports to CERT-In guidelines</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="creds">
+  <div class="wrap">
+    <div class="eb">03 · CERTIFICATIONS</div>
+    <h2>Credentials</h2>
+    <p class="desc">Hands-on certifications and training in penetration testing and red teaming.</p>
+    <div class="g3">
+      <div class="card k c"><div class="acr">CRTA</div><h3>Certified Red Team Analyst</h3><div class="iss">CyberWarFare Labs</div></div>
+      <div class="card k c"><div class="acr">eJPT</div><h3>eLearnSecurity Junior Penetration Tester</h3><div class="iss">INE (eLearnSecurity)</div></div>
+      <div class="card k c"><div class="acr">NSG</div><h3>Cybersecurity Course</h3><div class="iss">NSG Academy</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="labs">
+  <div class="wrap">
+    <div class="eb">04 · LABS</div>
+    <h2>Practice and research</h2>
+    <p class="desc">Controlled lab work on Hack The Box and write-ups on GitHub.</p>
+    <div class="g2">
+      <div class="card k a"><span class="tag t-a">HACK THE BOX</span>
+        <h3 style="margin-top:16px">HTB Hacker Rank and HTB Academy</h3>
+        <ul class="pts">
+          <li>Completed hands-on Linux and Windows machines and security challenges.</li>
+          <li>Practised enumeration, exploitation, privilege escalation and post-exploitation in controlled lab environments.</li>
+          <li>Built practical experience analysing systems without relying solely on published walkthroughs.</li>
+        </ul>
+      </div>
+      <div class="card k c"><span class="tag t-c">GITHUB</span>
+        <h3 style="margin-top:16px">Htb-Reports</h3>
+        <p style="margin:12px 0 24px">My reports on retired Hack The Box machines, one folder per machine.</p>
+        <div class="btns"><a class="btn p" href="https://github.com/dhanushhsuvarna/Htb-Reports" target="_blank" rel="noopener">Open Htb-Reports</a><a class="btn" href="https://github.com/dhanushhsuvarna" target="_blank" rel="noopener">All repositories</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eb">05 · EDUCATION</div>
+    <h2>Academic background</h2>
+    <p class="desc" style="margin-bottom:44px">Studied in Pune.</p>
+    <div class="g3">
+      <div class="card"><span class="badge">DEGREE</span><h3>B.Sc Computer Science</h3><p>PVG's College of Science, Pune</p><div class="score">CGPA across all three years<b>8.1</b></div></div>
+      <div class="card"><span class="badge">HSC</span><h3>Higher Secondary Certificate</h3><p>Vishwakarma College, Pune</p><div class="score">12th grade<b>61%</b></div></div>
+      <div class="card"><span class="badge">SSC</span><h3>Secondary School Certificate</h3><p>Abhinav English Medium School, Pune</p><div class="score">10th grade<b>89.4%</b></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="card cta">
+      <div class="g2">
+        <div>
+          <div class="eb">06 · CONTACT</div>
+          <h3>Get in touch</h3>
+          <p>For VAPT work or security roles, email is the quickest way to reach me. I'm based in Pune, India.</p>
+        </div>
+        <div class="chan">
+          <button class="ch" type="button" onclick="copyEmail()"><span><small>EMAIL</small><strong>dhanushhhsuvarna@gmail.com</strong></span><em>Click to copy</em></button>
+          <a class="ch" href="https://www.linkedin.com/in/dhanushsuvarna" target="_blank" rel="noopener"><span><small>LINKEDIN</small><strong>linkedin.com/in/dhanushsuvarna</strong></span><em>Open</em></a>
+          <a class="ch" href="https://github.com/dhanushhsuvarna" target="_blank" rel="noopener"><span><small>GITHUB</small><strong>github.com/dhanushhsuvarna</strong></span><em>Open</em></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>&copy; <span id="yr">2026</span> Dhanush Suvarna</span><span>Pune, Maharashtra, India</span></div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+var EMAIL='dhanushhhsuvarna@gmail.com';
+document.getElementById('yr').textContent=new Date().getFullYear();
+function toast(t){var el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(function(){el.classList.remove('show')},2800)}
+function copyEmail(){
+  if(navigator.clipboard){navigator.clipboard.writeText(EMAIL).then(function(){toast('Copied: '+EMAIL)},function(){toast('Email: '+EMAIL)})}
+  else{toast('Email: '+EMAIL)}
+}
+
+var stream=document.getElementById('stream'),input=document.getElementById('cmd');
+var C={
+ help:['Commands:','  whoami   who I am and what I do','  skills   tools by category','  certs    certifications','  exp      work experience','  contact  how to reach me','  clear    clear the screen'],
+ whoami:['USER   dhanush_suvarna','ROLE   VAPT Analyst, Sungensis Software Solutions','BASE   Pune, Maharashtra, India','CERTS  eJPT (INE), CRTA (CyberWarFare Labs)','FOCUS  web apps, Android, networks, Active Directory'],
+ skills:['[web/net]  Burp Suite Pro, Metasploit, Nmap, Nessus, OWASP ZAP, Postman','[android]  MobSF, Frida, Yaazhini, Jadx GUI, Apktool','[ad]       BloodHound, Responder, Kerbrute, CrackMapExec, Impacket, Mimikatz, Ligolo-ng, Chisel','[systems]  Linux, Windows, CERT-In style reporting'],
+ certs:['[1] CRTA  Certified Red Team Analyst (CyberWarFare Labs)','[2] eJPT  eLearnSecurity Junior Penetration Tester (INE)','[3] Cybersecurity Course (NSG Academy)'],
+ exp:['[2026-09 to now]      VAPT Analyst, Sungensis Software Solutions','[2025-12 to 2026-07] Cybersecurity R&D Intern, Digiwork Online Services & Consultancy LLP'],
+ contact:['email    '+EMAIL,'linkedin linkedin.com/in/dhanushsuvarna','github   github.com/dhanushhsuvarna']
+};
+function line(cmd,out,cls){
+  var d=document.createElement('div');d.className='ln';
+  if(cmd!==null){var p=document.createElement('span');p.className='pr';p.textContent='dhanush@recon:~$ ';d.appendChild(p);d.appendChild(document.createTextNode(cmd))}
+  if(out){var o=document.createElement('div');o.className='out '+(cls||'');o.textContent=out;d.appendChild(o)}
+  stream.appendChild(d);stream.scrollTop=stream.scrollHeight;
+}
+function run(raw){
+  var c=raw.trim().toLowerCase();if(!c)return;
+  if(c==='clear'){stream.textContent='';return}
+  line(raw.trim(),'');
+  if(C[c]){line(null,C[c].join('\n'),'ok')}
+  else{line(null,"command not found: "+c+". Type 'help' to see what's available.",'er')}
+}
+input.addEventListener('keydown',function(e){if(e.key==='Enter'){run(input.value);input.value=''}});
+document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){run(b.dataset.c)})});
+run('whoami');run('help');
+
+var links=[].slice.call(document.querySelectorAll('nav a'));
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('main section[id]').forEach(function(s){io.observe(s)});
+</script>
+</body>
+</html>
